@@ -2,13 +2,9 @@ class BaseController {
     constructor() {
         this.setBackButtonView('index')
     }
-    toast(msg) {
-        const toast = new bootstrap.Toast(document.getElementById('globalToast'))
-        document.getElementById('globalToastMessage').innerHTML = msg
+    toast(elemId) {
+        const toast = new bootstrap.Toast(document.getElementById(elemId))
         toast.show()
-    }
-    displayServiceError() {
-        this.toast('Service injoignable ou problème réseau')
     }
     setBackButtonView(view) {
         window.onpopstate = function() {

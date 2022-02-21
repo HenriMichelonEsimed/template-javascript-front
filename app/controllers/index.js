@@ -3,6 +3,10 @@ class IndexController extends BaseController {
         super()
         this.model = new Model()
     }
+
+    sayHello() {
+        this.toast("bonjourToast")
+    }
 }
 
 window.indexController = new IndexController()
