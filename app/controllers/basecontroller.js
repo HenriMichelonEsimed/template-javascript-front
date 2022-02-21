@@ -1,7 +1,6 @@
 class BaseController {
     constructor() {
         this.setBackButtonView('index')
-        this.model = new Model()
     }
     toast(msg) {
         const toast = new bootstrap.Toast(document.getElementById('globalToast'))

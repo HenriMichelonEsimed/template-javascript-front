@@ -1,6 +1,7 @@
 class IndexController extends BaseController {
     constructor() {
         super()
+        this.model = new Model()
     }
 }
 
