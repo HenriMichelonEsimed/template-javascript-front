@@ -1,5 +1,5 @@
 function $(selector, f) {
-    if (f == undefined)
+    if (f === undefined)
         return document.querySelector(selector)
     else 
         document.querySelectorAll(selector).forEach(f)
@@ -26,11 +26,9 @@ function include(selector, url, urlcontroller) {
         .then(res => res.text())
         .then(html => {
             $(`#${selector}`).innerHTML = html
-            fetch (urlcontroller, {cache: "no-cache"})
-                .then(res => res.text())
-                .then(js => {
-                    eval(js)
-                })
+            import(urlcontroller).then((controller) => {
+                controller.default()
+            })
         })
         .catch(function(err) {
             console.log('Failed to fetch page: ', err)
@@ -38,7 +36,7 @@ function include(selector, url, urlcontroller) {
 }
 
 function navigate(view) {
-    include('content',  `views/${view}.html`, `app/controllers/${view}.js`)
+    include('content',  `views/${view}.html`, `./controllers/${view}.js`)
 }
 
 const dateFormat = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/;

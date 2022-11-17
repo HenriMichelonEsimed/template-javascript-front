@@ -1,7 +1,10 @@
+import BaseController from "./basecontroller.js";
+import MyModel from "../model/model.js";
+
 class IndexController extends BaseController {
     constructor() {
         super()
-        this.model = new Model()
+        this.model = new MyModel()
     }
 
     sayHello() {
@@ -9,4 +12,4 @@ class IndexController extends BaseController {
     }
 }
 
-window.indexController = new IndexController()
+export default () => window.indexController = new IndexController()
