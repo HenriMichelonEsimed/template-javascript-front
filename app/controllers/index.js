@@ -1,10 +1,10 @@
 import BaseController from "./basecontroller.js";
-import MyModel from "../model/model.js";
+import MyAPIExemple from "../services/myapi.js";
 
 class IndexController extends BaseController {
     constructor() {
         super()
-        this.model = new MyModel()
+        this.api = new MyAPIExemple()
     }
 
     sayHello() {
