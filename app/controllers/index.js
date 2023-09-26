@@ -1,10 +1,10 @@
 import BaseController from "./basecontroller.js";
-import MyAPIExemple from "../services/myapi.js";
+import MyExampleRoutes from "../services/myexampleroutes.js";
 
 class IndexController extends BaseController {
     constructor() {
         super()
-        this.api = new MyAPIExemple()
+        this.api = new MyExampleRoutes()
     }
 
     sayHello() {
